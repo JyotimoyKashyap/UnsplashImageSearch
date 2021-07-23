@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toolbar
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.jyotimoykashyap.unsplashimagesearch.R
@@ -39,7 +41,8 @@ class GalleryFragment : Fragment() {
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
 
         // customize the toolbar
-        customizeToolbar()
+        customizeToolbar(binding.toolbarGallery)
+
 
 
         return binding.root
@@ -63,18 +66,19 @@ class GalleryFragment : Fragment() {
     }
 
     // function to customize the toolbar
-    fun customizeToolbar(){
-        binding.apply{
-            val radius = 12
-            val actionBarBackground = toolbarGallery.background as MaterialShapeDrawable
+    fun customizeToolbar(materialToolbar: MaterialToolbar){
 
-            actionBarBackground.shapeAppearanceModel =
-                actionBarBackground.shapeAppearanceModel.toBuilder()
-                    .setAllCorners(CornerFamily.ROUNDED, radius.toFloat())
-                    .build()
+        val radius = 12
+        val actionBarBackground = materialToolbar.background as MaterialShapeDrawable
 
-            toolbarGallery.background = actionBarBackground
-        }
+        materialToolbar.elevation = radius.toFloat()
+
+        actionBarBackground.shapeAppearanceModel =
+            actionBarBackground.shapeAppearanceModel.toBuilder()
+                .setAllCorners(CornerFamily.ROUNDED, radius.toFloat())
+                .build()
+
+
 
     }
 }
