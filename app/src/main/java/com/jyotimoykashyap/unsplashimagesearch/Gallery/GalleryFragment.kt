@@ -68,7 +68,7 @@ class GalleryFragment : Fragment() {
     // function to customize the toolbar
     fun customizeToolbar(materialToolbar: MaterialToolbar){
 
-        val radius = 12
+        val radius = 18
         val actionBarBackground = materialToolbar.background as MaterialShapeDrawable
 
         materialToolbar.elevation = radius.toFloat()
