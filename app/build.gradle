@@ -40,6 +40,8 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
 
     // All dependencies versions
     def nav_version = "2.3.5"

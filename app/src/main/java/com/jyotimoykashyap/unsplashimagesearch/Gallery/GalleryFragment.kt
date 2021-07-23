@@ -1,26 +1,26 @@
-package com.jyotimoykashyap.unsplashimagesearch
+package com.jyotimoykashyap.unsplashimagesearch.Gallery
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.jyotimoykashyap.unsplashimagesearch.databinding.FragmentSplashBinding
+import com.google.android.material.shape.CornerFamily
+import com.google.android.material.shape.MaterialShapeDrawable
+import com.jyotimoykashyap.unsplashimagesearch.R
+import com.jyotimoykashyap.unsplashimagesearch.databinding.FragmentGalleryBinding
 
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 
-class SplashFragment : Fragment() {
+class GalleryFragment : Fragment() {
 
     private var param1: String? = null
     private var param2: String? = null
 
-    private var _binding: FragmentSplashBinding? = null
+    private var _binding: FragmentGalleryBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,12 +36,10 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentSplashBinding.inflate(inflater, container, false)
+        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_galleryFragment)
-        }, 700)
-
+        // customize the toolbar
+        customizeToolbar()
 
 
         return binding.root
@@ -51,7 +49,7 @@ class SplashFragment : Fragment() {
 
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            SplashFragment().apply {
+            GalleryFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -62,5 +60,21 @@ class SplashFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    // function to customize the toolbar
+    fun customizeToolbar(){
+        binding.apply{
+            val radius = 12
+            val actionBarBackground = toolbarGallery.background as MaterialShapeDrawable
+
+            actionBarBackground.shapeAppearanceModel =
+                actionBarBackground.shapeAppearanceModel.toBuilder()
+                    .setAllCorners(CornerFamily.ROUNDED, radius.toFloat())
+                    .build()
+
+            toolbarGallery.background = actionBarBackground
+        }
+
     }
 }
