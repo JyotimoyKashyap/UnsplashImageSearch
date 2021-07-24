@@ -19,7 +19,64 @@
         android:background="@color/white"
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp">
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="19dp"
+        android:indeterminate="true"
+        android:indeterminateBehavior="cycle"
+        android:padding="0dp"
+        app:hideAnimationBehavior="outward"
+        app:minHideDelay="300"
+        app:trackThickness="2dp"
+        app:showAnimationBehavior="inward"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_gallery"
+        app:layout_constraintTop_toTopOf="@id/toolbar_gallery"
+        app:layout_constraintVertical_bias="1.0"
+        app:trackCornerRadius="36dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        tools:layout_editor_absoluteX="14dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/retry_btn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retry"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_gallery"
+        app:layout_constraintVertical_bias="0.62"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/no_result_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Results could not be loaded"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/retry_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/empty_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No results found for this query"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/retry_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -34,5 +91,7 @@
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_gallery"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
