@@ -12,14 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         app:layout_constraintTop_toTopOf="parent"
-        app:titleTextColor="#676565"
-        app:subtitle="Search ..."
+        app:subtitle="   Search ..."
         android:foreground="?attr/selectableItemBackground"
         android:clickable="true"
+        app:logo="@drawable/ic_toolbar_search"
         android:background="@color/white"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginTop="10dp"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
