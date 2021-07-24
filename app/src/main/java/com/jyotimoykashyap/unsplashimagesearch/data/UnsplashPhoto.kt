@@ -1,4 +1,4 @@
-package com.jyotimoykashyap.unsplashimagesearch.Models
+package com.jyotimoykashyap.unsplashimagesearch.data
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
@@ -10,6 +10,8 @@ data class UnsplashPhoto(
     val description: String?,
     val urls: UnsplashPhotoUrls,
     val user: UnsplashUser,
+    val color: String,
+    val likes: String
 ) : Parcelable {
 
     @Parcelize

@@ -1,4 +1,4 @@
-package com.jyotimoykashyap.unsplashimagesearch
+package com.jyotimoykashyap.unsplashimagesearch.ui.Splash
 
 import android.os.Bundle
 import android.os.Handler
@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.jyotimoykashyap.unsplashimagesearch.R
 import com.jyotimoykashyap.unsplashimagesearch.databinding.FragmentSplashBinding
 
 

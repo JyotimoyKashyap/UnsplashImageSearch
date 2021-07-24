@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/galleryFragment"
-        android:name="com.jyotimoykashyap.unsplashimagesearch.Gallery.GalleryFragment"
+        android:name="com.jyotimoykashyap.unsplashimagesearch.ui.Gallery.GalleryFragment"
         android:label="fragment_gallery"
         tools:layout="@layout/fragment_gallery" />
 </navigation>

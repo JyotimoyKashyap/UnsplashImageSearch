@@ -1,17 +1,13 @@
-package com.jyotimoykashyap.unsplashimagesearch.Gallery
+package com.jyotimoykashyap.unsplashimagesearch.ui.Gallery
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toolbar
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
-import com.jyotimoykashyap.unsplashimagesearch.R
 import com.jyotimoykashyap.unsplashimagesearch.databinding.FragmentGalleryBinding
 
 
