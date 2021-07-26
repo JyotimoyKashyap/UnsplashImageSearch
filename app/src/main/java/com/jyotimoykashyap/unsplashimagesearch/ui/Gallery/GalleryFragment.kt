@@ -9,12 +9,13 @@ import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.jyotimoykashyap.unsplashimagesearch.databinding.FragmentGalleryBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-
+@AndroidEntryPoint
 class GalleryFragment : Fragment() {
 
     private var param1: String? = null
