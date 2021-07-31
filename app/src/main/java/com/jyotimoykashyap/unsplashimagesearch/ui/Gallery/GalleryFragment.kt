@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.MaterialShapeDrawable
@@ -24,6 +25,8 @@ class GalleryFragment : Fragment() {
     private var _binding: FragmentGalleryBinding? = null
     private val binding get() = _binding!!
 
+    private val viewModel by viewModels<GalleryViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -38,6 +41,11 @@ class GalleryFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+
+        // init view model
+        viewModel.photos.observe(viewLifecycleOwner){
+
+        }
 
         // customize the toolbar
         customizeToolbar(binding.toolbarGallery)
